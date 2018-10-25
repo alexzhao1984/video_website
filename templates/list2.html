@@ -1,0 +1,49 @@
+$def with (page_posts, page_count, page)
+
+$code:
+    grace = 5
+    range = grace * 2
+    start = page - grace if page - grace > 0 else 1
+    end = start + range
+    if end > page_count[0]:
+        end = page_count[0]
+        start = end - range if end - range > 0 else 1
+
+<div id="new_post">
+	<a href="/add">+发帖</a>
+</div>
+<div id="switch_bankuai">
+	<a href="/list2">影视</a>
+</div>
+<table id="post_list">
+<tbody>
+	<tr>
+		<th class="title">话题</th>
+		<th class="bankuai">板块</th>
+		<th class="author">作者</th>
+		<th class="visit_count">访问量</th>
+		<th class="reply_count">回复数</th>
+		<th class="last_reply_time">最后回复</th>
+	</tr>
+$for p in page_posts[0]:
+	<tr>
+		 <td title="$p['title']"><a href="/view/$p['id']">$trim_utf8(p['title'], 25)</a></td>
+		 <td>$p['bankuai']</td>
+		 <td><a href="/user/$p['userid']">$p['username']</a></td>
+		 <td>$p['visit']</td>
+		 <td>$p['comment_count']</td>
+		 <td>$p['last_time']</td>
+	</tr>
+</tbody>
+</table>
+<div id="post_pager">
+$if start > 1:
+    <a class="page" href="/?page=1">1</a> ...
+$for i in xrange(start, end+1):
+    $if i == page:
+        <span class="page">$i</span>
+    $else:
+        <a class="page" href="/?page=$i">$i</a>
+$if end < page_count[0]:
+    ... <a class="page" href="/?page=$page_count[0]">$page_count[0]</a>
+</div>

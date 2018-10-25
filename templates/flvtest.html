@@ -1,0 +1,19 @@
+<script src="/static/js/lib/flv.min.js"></script>
+<video id="videoElement2"></video>
+<script>
+	function sleep(ms){
+		return new Promise(resolve=>setTimeout(resolve,ms));
+	}
+	async function demo() {
+		// body...
+		await sleep(10000);
+	}
+	if (flvjs.isSupported()) {
+		var videoElement=document.getElementById('videoElement2');
+		var flvPlayer=flvjs.createPlayer({type:'mp4',url:'http://192.168.26.131:8080/static/testmp4.mp5'});
+		flvPlayer.attachMediaElement(videoElement);
+		flvPlayer.load();
+		demo();
+		flvPlayer.play();
+	}
+</script>

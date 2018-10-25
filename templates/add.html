@@ -1,0 +1,55 @@
+$def with()
+
+<form id="new_post" action="" method="post" enctype="multipart/form-data">
+<table>
+<tbody>
+    <tr>
+        <td><label for="bankuai">板块</label></td>
+        <td>
+            <input list="dl1", id="bankui", name="bankuai" style="width:80px" accept="">
+                <datalist id="dl1">
+                  <option value="-请选择-">
+                  <option value="影视">
+                  <option value="社会">
+                  <option value="生活">
+                  <option value="体育">
+                  <option value="游戏">
+                  <option value="经济">
+                  <option value="教育">
+                  <option value="军事">
+                </datalist>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="title">标题</label></td>
+        <td>
+            <input type="text" id="title" name="title" style="width:800px" /><br />
+            <span class="validate_tip"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="content">内容</label></td>
+        <td>
+            <textarea id="content" name="content"></textarea><br />
+            <span class="validate_tip"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label for="upload_file">上传文件</label></td>
+        <td>
+            <input type="file" id="upload_file" name="upload_file" style="width:600px" accept="video/*" /><br />
+        </td>
+    </tr>
+    <tr>
+        <td><label for="url">文件url</label></td>
+        <td>
+            <input type="text" id="url" name="url" style="width:800px" /><br />
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" id="send_btn" value="发帖" /></td>
+    </tr>
+</tbody>
+</table>
+</form>
