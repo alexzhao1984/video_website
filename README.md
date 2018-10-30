@@ -7,8 +7,6 @@ before run this you need have python(above 2.6) and webpy installed. (webpy inst
 
 run python forum $your_port and you can visit the website in the internet browser (http://$your_ip:$your_port).
 
-see details here: http://www.cnblogs.com/russellluo/p/3240564.html
-
 
 <hr />
 <h4>latest update</h4>
