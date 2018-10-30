@@ -3,7 +3,7 @@ forum
 
 a simple forum based on web.py
 
-before run this you need have python(above 2.6) and webpy installed. (webpy install see http://webpy.org/install)
+before run this you need have python(above 2.7) and webpy installed. (webpy install see http://webpy.org/install)
 
 run python forum $your_port and you can visit the website in the internet browser (http://$your_ip:$your_port).
 
